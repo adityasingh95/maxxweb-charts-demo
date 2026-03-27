@@ -39,7 +39,7 @@ body {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  gap: 12px;
+  gap: 0;
   padding: 0;
   background: var(--header-bg);
   color: var(--text);
@@ -87,7 +87,8 @@ body {
 }
 
 .primary-nav {
-  margin-left: auto;
+  margin-left: clamp(180px, 17vw, 335px);
+  margin-right: auto;
 }
 
 .nav-link {
@@ -199,6 +200,10 @@ body {
 }
 
 @media (max-width: 1440px) {
+  .primary-nav {
+    margin-left: clamp(120px, 13vw, 220px);
+  }
+
   .nav-link {
     padding: 0 15px;
   }
@@ -221,6 +226,10 @@ body {
 
   .logged-in-navbar::-webkit-scrollbar {
     display: none;
+  }
+
+  .primary-nav {
+    margin-left: 48px;
   }
 
   .nav-left,
