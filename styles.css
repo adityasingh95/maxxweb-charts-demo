@@ -72,8 +72,9 @@ body {
 
 .brand-link img {
   display: block;
-  height: 45px;
+  height: 30px;
   width: auto;
+  object-fit: contain;
 }
 
 .navbar-toggler {
