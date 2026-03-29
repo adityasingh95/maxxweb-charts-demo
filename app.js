@@ -1,21 +1,32 @@
 window.addEventListener('DOMContentLoaded', () => {
-  if (typeof TradingView === 'undefined') {
+  const container = document.getElementById('tradingview_chart_widget');
+
+  if (!container) {
     return;
   }
 
-  new TradingView.widget({
+  const script = document.createElement('script');
+  script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+  script.type = 'text/javascript';
+  script.async = true;
+  script.innerHTML = JSON.stringify({
     autosize: true,
     symbol: 'FX:EURUSD',
     interval: '60',
     timezone: 'Etc/UTC',
     theme: 'dark',
+    backgroundColor: 'rgba(34, 34, 34, 1)',
     style: '1',
     locale: 'en',
-    enable_publishing: false,
-    hide_top_toolbar: false,
     withdateranges: true,
+    hide_side_toolbar: false,
     allow_symbol_change: true,
-    save_image: false,
-    container_id: 'tradingview_chart'
+    save_image: true,
+    details: true,
+    watchlist: ['FX:EURUSD', 'FX:GBPUSD', 'FX:USDJPY', 'FX:USDCHF', 'FX:AUDUSD', 'OANDA:XAUUSD'],
+    support_host: 'https://www.tradingview.com'
   });
+
+  container.innerHTML = '';
+  container.appendChild(script);
 });
