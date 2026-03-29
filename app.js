@@ -23,6 +23,13 @@ window.addEventListener('DOMContentLoaded', () => {
     allow_symbol_change: true,
     save_image: true,
     details: true,
+    hotlist: true,
+    calendar: true,
+    studies: [
+      'ROC@tv-basicstudies',
+      'StochasticRSI@tv-basicstudies',
+      'MASimple@tv-basicstudies'
+    ],
     watchlist: ['FX:EURUSD', 'FX:GBPUSD', 'FX:USDJPY', 'FX:USDCHF', 'FX:AUDUSD', 'OANDA:XAUUSD'],
     support_host: 'https://www.tradingview.com'
   });
